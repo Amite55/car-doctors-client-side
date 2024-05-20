@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import BookingRow from "./BookingRow";
-import axios from "axios";
+// import axios from "axios";
 // import Swal from "sweetalert2";
 
 
@@ -13,16 +13,16 @@ const Bookings = () => {
 
     useEffect(() => {
 
-        axios.get(url, {withCredentials: true})
-        .then(res => {
-            setBookings(res.data)
-        })
+        // axios.get(url, {withCredentials: true})
+        // .then(res => {
+        //     setBookings(res.data)
+        // })
 
-        // fetch(url)
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         setBookings(data);
-        //     })
+        fetch(url)
+            .then(res => res.json())
+            .then(data => {
+                setBookings(data);
+            })
     }, [url]) 
 
     return (
